@@ -1,44 +1,62 @@
-html, body{
-    font-family: sans-serif;
+:root{
+    --accent1: #0000FF;
+    --accent2: #cded4e;
+    --bg: rgb(150, 150, 150);
+    --banner-color: rgb(230, 230, 230);
+    --text-color: rgb(15, 15, 15);
 }
 
 body{
-
+    font-family: 'Kalam', serif;
+    margin: 0px;
 }
 
 html{
-    background: #1a4182;
+    background: var(--bg);
 }
 
-header{
-    border-top: 0.1em solid black;
-    background-image: url(../images/banner.png);
-    background-repeat: no-repeat;
-    background-size: 70% 100%;
+.banner{
+    background-color: var(--banner-color);
+    height: 10%;
+    margin: 0px;
+    box-shadow: 5px 5px 3px #888888;
 }
 
-header h2{
-
-}
-
-header h1, header h2{
-    color: #98b4e0;
+.banner h1, .banner h2{
+    color: var(--text-color);
     text-align: center;
 }
 
-header img{
-    float:left;
+.banner h1{
+    margin-bottom: 10px;
+    margin-top: 0px;
+    font-size: 5em;
+}
+
+.smaller{
+    font-size: 0.5em;
+}
+
+.banner h2{
+    margin-top: 0px;
+}
+
+.logo{
+    padding: 0px;
+    float: left;
+    margin: 0px;
+    width: 17em;
 }
 
 a{
-    color: orange;
     font-weight: bold;
+    font-size: 1.5em;
 }
 
-a:hover{
-    color: green;
+nav{
+    width: 96%;
+    margin-left: 2%;
 }
-
 
 nav ul {
     list-style-type: none;
@@ -46,99 +64,165 @@ nav ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    border-radius: 20px;
 }
 
 nav li {
-    float: left;
+    display: inline-block;
+    transition: all 0.3s;
 }
 
-nav li a, .dropbtn{
+nav li:hover{
+    background-color: grey;
+}
+
+nav li a{
     display: block;
-    color: white;
+    color: var(--banner-color);
     text-align: center;
     padding: 0.8em 1.5em;
     text-decoration: none;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #000;
-    min-width: 2em;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.dropdown-content a:hover {background-color: orange}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-li.dropdown {
-    display: inline-block;
-}
-
-nav li a:hover:not(.active) {
-    background-color: gray;
-    color: white;
-}
-
-.scalable {
-  overflow: hidden;
-}
-
-.scalable iframe {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.scalable .scalable-content {
-  height: 0;
-  position: relative;
-}
-
-.scalable-16-9 .scalable-content {
-  /* Percentage from 9 divided by 16 for ratio of 16:9. */
-  padding-bottom: 56.25%;
-}
-
-
 .active {
-    color: orange;
-}
-
-#bigger{
-    font-size: 2.2em;
+    color: var(--accent1);
 }
 
 main{
-    margin-left:10em;
-    margin-right: 0.8em;
+    width:100%;
+    align-content: center;
+    display: inline-block;
 }
 
-main h2{
-    margin-top: 0;
+main > :nth-child(even){
+    border-right: 25px solid var(--accent1);
+    border-left: 25px solid var(--accent1);
+}
+
+main > :nth-child(odd){
+    border-right: 25px solid var(--accent2);
+    border-left: 25px solid var(--accent2);
+}
+
+main div{
+    padding-left: 10px;
+    padding-top:  10px;
+}
+
+.fb{
+    margin-left: 10px;
+}
+
+.feature{
+    margin-left:  15%;
+    width:70%;
+    margin-top: 20px;
+    color: var(--text-color);
+    border-radius: 20px;
+    margin-bottom: 10px;
+    background-color: var(--banner-color);
+    display:inline-block;
+}
+
+.feature p{
+    padding-right: 5px;
+    font-size: 1.6em;
+    padding-top: 2px;
+    padding-bottom: 0px;
+    margin: auto;
+}
+
+.left{
+    float:left;
+}
+
+.feature figure{
+    margin-left: 10px;
+    width: 20%;
+}
+
+.feature figure img{
+    width: 100%;
+    min-width: 150px;
+    max-width: 350px;
+}
+
+.price-button{
+    background-color: var(--bg);
+    box-shadow: 5px 5px 3px #888888;
+    color: var(--accent1);
+    transition: all 0.3s;
+}
+
+.price-button:hover{
+    font-size:1.1em;
+    font-style:bold;
+}
+
+.close{
+    font-size: 0.6em;
+    transition: all 0.4s;
+}
+
+.close:hover{
+    color: var(--accent1);
+    font-size:0.8em;
+}
+
+.hide{
+    display:none;
+}
+
+.show{
+    display:block;
+}
+
+.drive-img{
+    max-width: 90%;
+    border:none;
+}
+
+.overlay {
+   background:transparent; 
+   position:absolute;
 }
 
 .clear {
-      clear: both;
+    clear: both;
+}
+
+.fb-iframe{
+    width:60%;
+    margin-left:10%;
+    min-width: 500px;
 }
 
 footer{
-    text-align: center;
+    height: 3em;
     font-size:1em;
-    border-top: 0.1em solid black;
-    background: #222;
-    height: 1.2em;
+    color: white;
+}
+
+footer p{
+    height: 100%;
+    background-color: var(--text-color);
+    border-radius: 10px;
 }
 
 footer i{
     float: left;
+    padding-left:10px;
 }
 
 footer b{
     float: right;
+    padding-right: 10px;
+}
+
+
+.fixed{
+    top:0;
+    height: 8%;
+    position:fixed;
+    z-index: 200;
 }
