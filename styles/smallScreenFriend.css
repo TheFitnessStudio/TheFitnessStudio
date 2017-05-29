@@ -1,0 +1,93 @@
+.nav-mobile{
+	width:40px;
+	display:none;
+	border:4px solid  #49b293;
+	padding:15px;
+	transition: all 0.5s;
+ }
+
+.nav-mobile div{
+     height:4px;
+     margin:5px 0px;
+     background-color:#fff;
+     transition: all 0.5s;
+}
+
+.one-clicked{
+	transform: translateY(9px) rotate(45deg);
+}
+
+.three-clicked{
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.two-clicked{
+    opacity:0;
+}
+
+@media screen and (max-width:1000px){
+    .banner{
+        display: block;
+    }
+
+    .banner h1{
+        display:none;
+    }
+
+    .logo{
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+}
+
+
+@media screen and (max-width: 800px){
+    .logo{
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    .feature{
+        display: block;
+    }
+
+    .feature figure{
+        float: none;
+    }
+
+}
+
+@media screen and (max-width: 500px){
+    .nav-items{
+        display: none;
+    }
+
+    .nav-mobile{
+        display:block;
+    }
+
+    #community, #rates, #atmosphere, #testimonials{
+        border-left: none;
+    }
+
+    #schedule{
+        border:none;
+    }
+}
+
+@media screen and (max-width: 600px){
+    #schedule{
+        width: 96%;
+        margin:0px;
+        padding:0px;
+    }
+}
+
+.mobile-menu{
+    display: block;
+}
+
+.mobile-li{
+    display:block;
+}

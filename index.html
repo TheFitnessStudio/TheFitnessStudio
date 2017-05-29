@@ -3,63 +3,92 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-    <link rel = 'stylesheet' href="styles/main.css">
+    <link rel='stylesheet' href='scripts/fullcalendar/fullcalendar.css' />
+    <script src='scripts/fullcalendar/lib/jquery.min.js'></script>
+    <script src='scripts/fullcalendar/lib/moment.min.js'></script>
+    <script src='scripts/fullcalendar/fullcalendar.js'></script>
+    <script type='text/javascript' src='scripts/fullcalendar/gcal.js'></script>
+    <script type='text/javascript' src='scripts/schedule.js'></script>
+    <link rel = 'stylesheet' href="styles/main.css" />
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Kalam" />
+    <script type='text/javascript' src = "scripts/navBar.js"></script>
+    <script type='text/javascript' src = "scripts/prices.js"></script>
+    <script type='text/javascript' src='scripts/events.js'></script>
+    <link rel = 'stylesheet' href="styles/smallScreenFriend.css">
     <meta viewport>
 	<title>The Fitness Studio</title>
 </head>
 
-<body>
+<body font-family = 'Kalam'>
 	<header>
-        <nav>
-            <ul>
-              <li><a class="active" href="#home">Home</a></li>
-
-              <li><a href="findUs.html">Find Us</a></li>
-
-              <li><a href="events.html">Events</a></li>
-            </ul>
-        </nav>
-        <div>
-            <h1>The Fitness Studio, LLC</h1>
-            <h2>We make fitness fun!</h2>
+        <div class = "banner">
+            <img src= "images/logo.png" class = "logo">
+            <h1>The Fitness Studio<span class ="smaller">,LLC</span></h1>
+            <h2>We make fitness fun</h2>
         </div>
+        <nav>
+            <div class= "nav-mobile">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+            </div>
+            <div class= "nav-items">
+                <ul>
+                  <li><a class="active" href="#home">Home</a></li>
+
+                  <li><a href="#community">About Us</a></li>
+
+                  <li><a href="#events">Events</a></li>
+                  <li><a href="#schedule">Schedule</a></li>
+                  <li><a href="#rates">Prices</a></li>
+                </ul>
+            </div>
+        </nav>
 	</header>
+    <div id = "home"></div>
     <main>
         <div id = "community" class = "feature">
             <figure class= "left">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/652/unsplash-daisy.jpg">
-                <figcaption>boop</figcaption>
+                <img src="images/tfs.jpg">
+                <figcaption>bip</figcaption>
             </figure>
             <p>Established in 2009, the Fitness Studio LLC is Rhode Island's popular exercise studio specializing in group fitness, while providing personalized, individual attention to its members.
             </p>
-            <p>Highly Qualified, Certified Instructors;</p>
         </div>
 
         <div id = "atmosphere" class = "feature">
+            <div height = "402px" width = "200px" background-color= "green"></div>
             <p>The Fitness Studio LLC provides a unique atmosphere in which to work out: - a large, 2200 sq. ft. suspended hardwood floor;
             </p>
             <p>Air Conditioned Aerobics Room;
                 Ample on-site parking;
                 Conveniently located in Warwick;
             </p>
+            <p>Highly Qualified, Certified Instructors;</p>
         </div>
 
         <div id = "rates" class = "feature">
-            <p>Affordable Rates and Packages to meet your needs;
+            <p><span class = "price-button">Affordable Rates and Packages</span> to meet your needs;
+                <div id = "prices" class ="hide">
+                    <div class = "close">(show less)</div>
+                    list of rates
+                </div>
             </p>
             <h2>First Day Free</h2>
             <h3>--try as many classes as you want.<br>
             No obligation or high pressure sales pitch!</h3>
         </div>
 
-        <div id = "schedule" class = "feature">
-            <iframe src="https://docs.google.com/spreadsheets/d/1JLMl_Dmphv0D_6Z7sc6klBTjy9KRB-82rgIpytpIQa8/pubhtml?gid=0&chrome=false&widget=false&headers=false&range=a6:g37" height="500px" width="500px"></iframe>
-        </div>
-        <div id = "testimonials" class = "feature"></div>
-	
-    <p>We regularly post updates and pictures on our Facebook page, so make sure to like us below! </p>
+        <div id = "schedule" class = "feature"></div>
+        <div id = "events" class = "feature"></div>
+        <!--<div id = "testimonials" class = "feature"></div>-->
+        <div id="fb" class = "feature">
+        <p class = "fb">We regularly post updates and pictures on our Facebook page, so make sure to like us below! </p>
+    <div class="fb-iframe"><iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FThe-Fitness-Studio-LLC-131684450202183I%2F&tabs=timeline&width=600&height=1000&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=814497618702498" width="100%" min-width="600px" height="1000" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div></div>
     </main>
+
     <div class="clear"></div>
-	<footer><i>&copy; 2016 Stephanie Donnelly</i><b>400 Warwick Avenue, Warwick, RI, US | (401) 219-0259</b></footer>
+	<footer><p><i>&copy; 2016 Stephanie Donnelly</i><b>400 Warwick Avenue, Warwick, RI, US | (401) 219-0259</b></p></footer>
 </body>
 </html>
