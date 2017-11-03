@@ -3,92 +3,268 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-    <link rel='stylesheet' href='scripts/fullcalendar/fullcalendar.css' />
-    <script src='scripts/fullcalendar/lib/jquery.min.js'></script>
-    <script src='scripts/fullcalendar/lib/moment.min.js'></script>
-    <script src='scripts/fullcalendar/fullcalendar.js'></script>
-    <script type='text/javascript' src='scripts/fullcalendar/gcal.js'></script>
-    <script type='text/javascript' src='scripts/schedule.js'></script>
-    <link rel = 'stylesheet' href="styles/main.css" />
+		<link rel="stylesheet" href='styles/reset.css'/>
+		<script type='text/javascript' src='scripts/jquery.min.js'></script>
+
+    <script type='text/javascript' src='scripts/scheduleMain.js'></script>
+		<script type='text/javascript' src='scripts/schedulePost.js'></script>
     <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Kalam" />
-    <script type='text/javascript' src = "scripts/navBar.js"></script>
-    <script type='text/javascript' src = "scripts/prices.js"></script>
+		<link rel="stylesheet" href='styles/scheduleStyle.css'/>
+
+    <link rel = 'stylesheet' href="styles/main.css" />
+		<script type='text/javascript' src='scripts/music.js'></script>
+    <script type='text/javascript' src = "scripts/buttons.js"></script>
     <script type='text/javascript' src='scripts/events.js'></script>
+    <script type='text/javascript' src = "scripts/navBar.js"></script>
     <link rel = 'stylesheet' href="styles/smallScreenFriend.css">
-    <meta viewport>
+    <meta viewport content="width=device-width, initial-scale=1">
+		<script>
+
+			/* Set the width of the side navigation to 250px */
+			function openNav() {
+				document.getElementById("mySidenav").style.width = "250px";
+			}
+
+			/* Set the width of the side navigation to 0 */
+			function closeNav() {
+				document.getElementById("mySidenav").style.width = "0";
+			}</script>
 	<title>The Fitness Studio</title>
 </head>
 
-<body font-family = 'Kalam'>
+<body>
+	<audio id="myAudio" src="dumbo.mp3"></audio>
 	<header>
-        <div class = "banner">
-            <img src= "images/logo.png" class = "logo">
-            <h1>The Fitness Studio<span class ="smaller">,LLC</span></h1>
-            <h2>We make fitness fun</h2>
-        </div>
-        <nav>
-            <div class= "nav-mobile">
-                <div class="one"></div>
-                <div class="two"></div>
-                <div class="three"></div>
-            </div>
-            <div class= "nav-items">
-                <ul>
-                  <li><a class="active" href="#home">Home</a></li>
+    <div class = "banner">
 
-                  <li><a href="#community">About Us</a></li>
+        <img src= "images/logo.png" class = "logo">
 
-                  <li><a href="#events">Events</a></li>
-                  <li><a href="#schedule">Schedule</a></li>
-                  <li><a href="#rates">Prices</a></li>
-                </ul>
-            </div>
-        </nav>
+        <h1 class="title">The Fitness Studio<span class ="smaller">,LLC</span></h1>
+        <h2>We make fitness fun!</h2>
+    </div>
+      <nav>
+          <div class= "nav-mobile" onclick = "openNav()">
+						<div class="one"></div>
+						<div class="two"></div>
+						<div class="three"></div>
+					</div>
+							<div id="mySidenav" class="sidenav">
+							  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+							  <a href="#home">Home</a>
+							  <a href="#community">About Us</a>
+							  <a href="#events">Events</a>
+								<a href="#schedule">Schedule</a>
+							  <a href="#rates">Prices</a>
+						</div>
+
+						<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page
+						<div id="main">
+						  ...
+						</div>-->
+          <div class= "nav-items">
+              <ul>
+                <li><a class="active" href="#home">Home</a></li>
+
+                <li><a href="#community">About Us</a></li>
+
+                <li><a href="#events">Events</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#rates">Prices</a></li>
+              </ul>
+          </div>
+      </nav>
 	</header>
-    <div id = "home"></div>
-    <main>
-        <div id = "community" class = "feature">
-            <figure class= "left">
-                <img src="images/tfs.jpg">
-                <figcaption>bip</figcaption>
-            </figure>
-            <p>Established in 2009, the Fitness Studio LLC is Rhode Island's popular exercise studio specializing in group fitness, while providing personalized, individual attention to its members.
-            </p>
-        </div>
+  <div id = "home"></div>
+  <main>
+    <div id = "community" class = "feature">
+        <figure class= "left">
+            <img src="images/tfs.jpg">
+            <figcaption>bip</figcaption>
+        </figure>
+        <p>Established in 2009, the Fitness Studio LLC is Rhode Island's popular exercise studio specializing in group fitness, while providing personalized, individual attention to its members.
+        </p>
+    </div>
 
-        <div id = "atmosphere" class = "feature">
-            <div height = "402px" width = "200px" background-color= "green"></div>
-            <p>The Fitness Studio LLC provides a unique atmosphere in which to work out: - a large, 2200 sq. ft. suspended hardwood floor;
-            </p>
-            <p>Air Conditioned Aerobics Room;
-                Ample on-site parking;
-                Conveniently located in Warwick;
-            </p>
-            <p>Highly Qualified, Certified Instructors;</p>
-        </div>
+    <div id = "atmosphere" class = "feature">
+        <div height = "402px" width = "200px" background-color= "green"></div>
+        <p>The Fitness Studio LLC provides a unique atmosphere in which to work out: -
+        </p>
+				<ul>
+					<li>a large, 2200 sq. ft. suspended hardwood floor</li>
+      		<li>Air Conditioned Aerobics Room</li>
+          <li>Ample on-site parking</li>
+          <li>Conveniently located in Warwick</li>
+					<li>Highly Qualified, Certified Instructors</li>
+				</ul>
+    </div>
 
-        <div id = "rates" class = "feature">
-            <p><span class = "price-button">Affordable Rates and Packages</span> to meet your needs;
-                <div id = "prices" class ="hide">
-                    <div class = "close">(show less)</div>
-                    list of rates
-                </div>
-            </p>
-            <h2>First Day Free</h2>
-            <h3>--try as many classes as you want.<br>
-            No obligation or high pressure sales pitch!</h3>
-        </div>
+    <div id = "rates" class = "feature">
+        <span class = "price button" open-text="See less" closed-text="Affordable Rates and Packages">Affordable Rates and Packages</span>
 
-        <div id = "schedule" class = "feature"></div>
-        <div id = "events" class = "feature"></div>
-        <!--<div id = "testimonials" class = "feature"></div>-->
-        <div id="fb" class = "feature">
-        <p class = "fb">We regularly post updates and pictures on our Facebook page, so make sure to like us below! </p>
-    <div class="fb-iframe"><iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FThe-Fitness-Studio-LLC-131684450202183I%2F&tabs=timeline&width=600&height=1000&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=814497618702498" width="100%" min-width="600px" height="1000" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div></div>
-    </main>
+            <div class ="hide buttonOpens">
+								<table>
+									<tr>
+										<th>Price</th>
+										<th>Duration</th>
+										<th>Benefits</th>
+									</tr>
+									<tr>
+										<td>$39</td>
+										<td>One-month membership</td>
+										<td>Unlimited classes for 30 days.</td>
+									</tr>
+									<tr>
+										<td>$99</td>
+										<td>Three-month membership</td>
+										<td>Unlimited classes for 90 days.</td>
+									</tr>
+									<tr>
+										<td>$185</td>
+										<td>Six-month membership</td>
+										<td>Unlimited classes for 6 months.</td>
+									</tr>
+									<tr>
+										<td>$335</td>
+										<td>One-year membership</td>
+										<td>Unlimited classes for one year.</td>
+									</tr>
+									<tr>
+										<td>$10</td>
+										<td>Single visit (walk-in)</td>
+										<td>Take classes all day long for this one low price</td>
+									</tr>
+									<tr>
+										<td>$42</td>
+										<td>Pre-Paid Punch (Valid for up to three months)</td>
+										<td>Six classes at one low price.</td>
+									</tr>
+								</table>
+								<p>Senior Discounts (age 62+) and Student Discounts available with valid ID on one-month, three-month, six-month and oneyear memberships. Punch card &amp; single visits excluded.</p>
+            </div>
+
+
+        <h2>First Day Free</h2>
+        <h3>--try as many classes as you want.<br>
+        No obligation or high pressure sales pitch!</h3>
+    </div>
+
+    <div id = "schedule">
+			<div class="cd-schedule">
+				<div class="timeline">
+					<ul>
+						<li class="800"><span>8:00</span></li>
+						<li class="830"><span>8:30</span></li>
+						<li class="900"><span>9:00</span></li>
+						<li class="930"><span>9:30</span></li>
+						<li class="1000 ten"><span></span></li>
+						<li class="1630"><span>4:30</span></li>
+						<li class="1700"><span>5:00</span></li>
+						<li class="1730"><span>5:30</span></li>
+						<li class="1800"><span>6:00</span></li>
+						<li class="1830"><span>6:30</span></li>
+						<li class="1900"><span>7:00</span></li>
+						<li class="1930"><span>7:30</span></li>
+						<li class="2000"><span>8:00</span></li>
+						<li class="2030"><span>8:30</span></li>
+						<li class="2100"><span></span></li>
+					</ul>
+				</div>
+				<div class="events">
+				<ul>
+					<li class="events-group">
+						<div class="top-info"><span>Monday</span></div>
+						<ul class ="Monday">
+						</ul>
+					</li>
+
+					<li class="events-group">
+						<div class="top-info"><span>Tuesday</span></div>
+						<ul class ="Tuesday">
+							<!-- events here -->
+						</ul>
+					</li>
+
+					<li class="events-group">
+						<div class="top-info"><span>Wednesday</span></div>
+
+						<ul class ="Wednesday">
+							<!-- events here -->
+						</ul>
+					</li>
+
+					<li class="events-group">
+						<div class="top-info"><span>Thursday</span></div>
+
+						<ul class ="Thursday">
+							<!-- events here -->
+						</ul>
+					</li>
+
+					<li class="events-group">
+						<div class="top-info"><span>Friday</span></div>
+
+						<ul class ="Friday">
+							<!-- events here -->
+						</ul>
+					</li>
+
+					<li class="events-group">
+						<div class="top-info"><span>Saturday</span></div>
+
+						<ul class ="Saturday">
+							<!-- events here -->
+						</ul>
+					</li>
+
+					<li class="events-group">
+						<div class="top-info"><span>Sunday</span></div>
+
+						<ul class ="Sunday">
+							<!-- events here -->
+						</ul>
+					</li>
+					<!-- additional li.events-group here -->
+				</ul>
+			</div>
+				<div class="event-modal">
+					<header class="header">
+						<div class="content">
+							<span class="event-date"></span>
+							<h3 class="event-name"></h3>
+						</div>
+
+						<div class="header-bg"></div>
+					</header>
+
+					<div class="body">
+						<div class="event-info"></div>
+						<div class="body-bg"></div>
+					</div>
+
+					<a href="#0" class="close">Close</a>
+				</div>
+			</div>
+		</div>
+
+    <div id = "events" class = "feature">
+			<div id="eventsHere"></div>
+			<div class="hide buttonOpens" id="moreEvents"></div>
+			<div class= "button events" open-text="Less" closed-text="More">More</div>
+		</div>
+    <!--<div id = "testimonials" class = "feature"></div>-->
+    <div id="fb" class = "feature">
+    <p class = "fb">We regularly post updates and pictures on our Facebook page, so make sure to like us below! </p>
+	  <div class="fb-feed"><iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FThe-Fitness-Studio-LLC-131684450202183I%2F&tabs=timeline&width=600&height=1000&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=814497618702498" width="100%" min-width="600px" height="1000" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
+		<div class="fb-head"><iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FThe-Fitness-Studio-LLC-131684450202183%2F&tabs=header&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=814497618702498" width="340" height="130" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+		</div>
+	</div>
+	<div id= "like-button">
+		<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FThe-Fitness-Studio-LLC-131684450202183I&width=51&layout=box_count&action=like&size=small&show_faces=false&share=true&height=65&appId=814497618702498" width="51" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+	</div>
+  </main>
 
     <div class="clear"></div>
-	<footer><p><i>&copy; 2016 Stephanie Donnelly</i><b>400 Warwick Avenue, Warwick, RI, US | (401) 219-0259</b></p></footer>
+	<footer><p><i>&copy; 2017 Stephanie Donnelly, </i><b>400 Warwick Avenue, Warwick, RI, US | (401) 219-0259</b></p></footer>
 </body>
 </html>
