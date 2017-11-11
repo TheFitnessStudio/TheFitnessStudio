@@ -1,14 +1,21 @@
 .nav-mobile{
-	width:40px;
+	width:50px;
+	top:5px;
+	right:5px;
 	display:none;
-	border:4px solid  #49b293;
-	padding:15px;
+	position:fixed;
+	border:3px solid #49b293;
+	background-color: var(--bg);
+	padding:8px;
 	transition: all 0.5s;
+	z-index:2;
+	border-radius:10px;
  }
 
 .nav-mobile div{
      height:4px;
-     margin:5px 0px;
+		 width:100%;
+     margin:4px 0px;
      background-color:#fff;
      transition: all 0.5s;
 }
@@ -25,29 +32,74 @@
     opacity:0;
 }
 
+ /* The side navigation menu */
+ .sidenav {
+     height: 100%; /* 100% Full-height */
+     width: 0; /* 0 width - change this with JavaScript */
+     position: fixed; /* Stay in place */
+     z-index: 3; /* Stay on top */
+     top: 0;
+     right: 0;
+     background-color: #111; /* Black*/
+     overflow-x: hidden; /* Disable horizontal scroll */
+     padding-top: 60px; /* Place content 60px from the top */
+     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+ }
+
+ /* The navigation menu links */
+ .sidenav a {
+     padding: 8px 8px 8px 32px;
+     text-decoration: none;
+     font-size: 25px;
+     color: #818181;
+     display: block;
+     transition: 0.3s
+ }
+
+ /* When you mouse over the navigation links, change their color */
+ .sidenav a:hover, .offcanvas a:focus{
+     color: #f1f1f1;
+ }
+
+ /* Position and style the close button (top right corner) */
+ .sidenav .closebtn {
+     position: absolute;
+     top: 0;
+     right: 25px;
+     font-size: 36px;
+     margin-left: 50px;
+ }
+
+ /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+ #main {
+     transition: margin-left .5s;
+     padding: 20px;
+ }
+
+ /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+ @media screen and (max-height: 450px) {
+     .sidenav {padding-top: 15px;}
+     .sidenav a {font-size: 18px;}
+ }
+
 @media screen and (max-width:1000px){
-    .banner{
+		.logo{
+			width:300px;
+		}
+		.banner{
         display: block;
     }
 
-    .banner h1{
-        display:none;
+    .logo{
+			float:none;
     }
 
-    .logo{
-        width: 50%;
-        margin-left: 25%;
-        margin-right: 25%;
+		.banner h1{
+        display:none;
     }
 }
 
-
 @media screen and (max-width: 800px){
-    .logo{
-        width: 70%;
-        margin-left: 15%;
-        margin-right: 15%;
-    }
     .feature{
         display: block;
     }
@@ -56,38 +108,82 @@
         float: none;
     }
 
-}
+		.title{
+			font-size:3em;
+		}
 
-@media screen and (max-width: 500px){
-    .nav-items{
+		.nav-items{
         display: none;
     }
 
     .nav-mobile{
         display:block;
     }
+		nav{
+			width:auto;
+		}
 
-    #community, #rates, #atmosphere, #testimonials{
+		main > :nth-child(odd), main > :nth-child(even){
         border-left: none;
     }
 
-    #schedule{
-        border:none;
-    }
+		.feature{
+			width:98%;
+			margin:1%;
+		}
+
+		.feature figure{
+			width: 100%;
+		}
+
+		.feature figure img{
+			display:block;
+			width: 100%;
+			margin:auto;
+		}
+
+		#cal-button{
+			display:block;
+		}
+		footer{
+			height:4em;
+		}
+		footer p{
+			text-align: center;
+		}
+		footer b, footer i{
+			float:none;
+		}
 }
 
 @media screen and (max-width: 600px){
-    #schedule{
-        width: 96%;
-        margin:0px;
-        padding:0px;
-    }
+		.fb-feed{
+			display: none;
+		}
+		.fb-head{
+			display:block;
+		}
 }
 
-.mobile-menu{
-    display: block;
+@media screen and (max-width: 500px){
+
+	.logo{
+		width:250px;
+	}
+
+	.feature{
+		border-left: none;
+		margin-left:2%;
+		width: 88%;
+	}
+
 }
 
-.mobile-li{
-    display:block;
+@media screen and (max-width: 430px){
+	#fb.feature{
+		display:none;
+	}
+	#like-button{
+		display:block;
+	}
 }

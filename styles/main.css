@@ -1,23 +1,27 @@
 :root{
     --accent1: #0000FF;
     --accent2: #cded4e;
-    --bg: rgb(150, 150, 150);
+    --bg: rgb(160, 160, 160);
     --banner-color: rgb(230, 230, 230);
     --text-color: rgb(15, 15, 15);
+    --darker-grey: rgb(140, 140, 140);
 }
 
 body{
-    font-family: 'Kalam', serif;
+    font-family: sans-serif;
     margin: 0px;
 }
 
+header, footer{
+  font-family: 'Kalam', sans-serif;
+}
 html{
     background: var(--bg);
 }
 
 .banner{
     background-color: var(--banner-color);
-    height: 10%;
+    height: 15em;
     margin: 0px;
     box-shadow: 5px 5px 3px #888888;
 }
@@ -30,7 +34,13 @@ html{
 .banner h1{
     margin-bottom: 10px;
     margin-top: 0px;
-    font-size: 5em;
+    font-size: 415%;
+    padding:20px;
+}
+
+.banner h2{
+  font-size: 195%;
+  color: var(--accent1);
 }
 
 .smaller{
@@ -42,10 +52,8 @@ html{
 }
 
 .logo{
-    padding: 0px;
-    float: left;
-    margin: 0px;
-    width: 17em;
+  float: left;
+  max-height:100%;
 }
 
 a{
@@ -63,8 +71,10 @@ nav ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    max-height:100%;
     background-color: #333;
     border-radius: 20px;
+    transition: all 0.3s;
 }
 
 nav li {
@@ -84,8 +94,19 @@ nav li a{
     text-decoration: none;
 }
 
-.active {
-    color: var(--accent1);
+
+.fixed{
+    top:0;
+    margin:0;
+    width:100%;
+    position:fixed;
+    z-index: 200;
+}
+
+.fixed-ul{
+  border-radius:0px;
+  height: 40px;
+  font-size: 0.6em;
 }
 
 main{
@@ -104,7 +125,16 @@ main > :nth-child(odd){
     border-left: 25px solid var(--accent2);
 }
 
-main div{
+@media screen and (max-width: 350px){
+	main > :nth-child(odd){
+		border-right: 15px solid var(--accent2);
+	}
+	 main > :nth-child(even){
+			border-right: 15px solid var(--accent1);
+	}
+}
+
+main div.feature{
     padding-left: 10px;
     padding-top:  10px;
 }
@@ -120,16 +150,19 @@ main div{
     color: var(--text-color);
     border-radius: 20px;
     margin-bottom: 10px;
+    padding:20px;
+    padding-top:40px;
     background-color: var(--banner-color);
     display:inline-block;
 }
 
+#schedule{
+  border-radius:20px;
+}
+
 .feature p{
-    padding-right: 5px;
-    font-size: 1.6em;
-    padding-top: 2px;
-    padding-bottom: 0px;
-    margin: auto;
+    font-size: 2em;
+    margin:auto;
 }
 
 .left{
@@ -138,42 +171,74 @@ main div{
 
 .feature figure{
     margin-left: 10px;
-    width: 20%;
+    width: 35%;
 }
 
 .feature figure img{
     width: 100%;
-    min-width: 150px;
+    min-width: 250px;
     max-width: 350px;
+    padding: 0 3%;
 }
 
-.price-button{
+#community p{
+  padding: 3% 0;
+}
+
+#atmosphere ul li{
+  list-style-type: disc;
+  margin-left:5%;
+  font-size:150%;
+}
+
+#price{
+  position:absolute;
+  top:-500px;
+  transition:all 1s;
+}
+
+#wrapper{
+  position:relative;
+  overflow: hidden;
+  margin: 3%;
+}
+
+.button{
     background-color: var(--bg);
-    box-shadow: 5px 5px 3px #888888;
-    color: var(--accent1);
-    transition: all 0.3s;
+    border-radius:8px;
+    display:inline-block;
+    width:60%;
+    margin-left:20%;
+    text-align: center;
+    transition:all 0.4s;
+    font-size:150%;
+    margin-bottom: 15px;
 }
 
-.price-button:hover{
-    font-size:1.1em;
-    font-style:bold;
+.button:hover{
+  background-color:var(--darker-grey);
+  top:0;
 }
 
-.close{
-    font-size: 0.6em;
-    transition: all 0.4s;
+td, th{
+  font-size:150%;
 }
 
-.close:hover{
-    color: var(--accent1);
-    font-size:0.8em;
+#rates td{
+  padding:1%;
+  border-top: 2px solid black;
+}
+#rates table th{
+  font-weight: bold;
 }
 
 .hide{
+    opacity: 0;
     display:none;
 }
 
 .show{
+    opacity: 1;
     display:block;
 }
 
@@ -183,22 +248,32 @@ main div{
 }
 
 .overlay {
-   background:transparent; 
+   background:transparent;
    position:absolute;
+   max-width:90%;
 }
 
 .clear {
     clear: both;
 }
 
-.fb-iframe{
+.fb-feed{
     width:60%;
-    margin-left:10%;
+    margin-left:5%;
     min-width: 500px;
 }
 
+.fb-head{
+  display:none;
+}
+
+#like-button{
+  border:none;
+  display:none;
+}
+
 footer{
-    height: 3em;
+    height: 2em;
     font-size:1em;
     color: white;
 }
@@ -207,6 +282,7 @@ footer p{
     height: 100%;
     background-color: var(--text-color);
     border-radius: 10px;
+    padding-top:9px;
 }
 
 footer i{
@@ -217,12 +293,4 @@ footer i{
 footer b{
     float: right;
     padding-right: 10px;
-}
-
-
-.fixed{
-    top:0;
-    height: 8%;
-    position:fixed;
-    z-index: 200;
 }
