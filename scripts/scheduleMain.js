@@ -16,6 +16,7 @@ jQuery(document).ready(function($){
     ['Friday','20:00-23:00','Swing Dancing','TS'],
     ['Saturday','8:00','Zumba','ND'],
     ['Saturday','9:00','Cardio Mix','PD'],
+		['Saturday','10:15','Yoga','JG'],
     ['Sunday','8:30','Step & Sculpt','ND']];
 
   var classDescriptions = [
@@ -44,20 +45,30 @@ jQuery(document).ready(function($){
       var dayOfWeek = scheduleText[i][0];
       var start = scheduleText[i][1];
       var end = " ";
+			var rounded = "none";
       if(start.indexOf('-') > -1){
 				var splart = start.split('-');
         start = splart[0];
         end = splart[1];
       }else{
         var splart = start.split(':');
-        end = ""+(parseInt(splart[0])+1)+':'+splart[1];
+				var startHour = splart[0];
+				var startMinute = splart[1];
+				if(startMinute== '15'){
+					start = startHour+':00';
+					rounded = "yes";
+				}else if(startMinute== '45'){
+					start = startHour+':30';
+					rounded = "yes";
+				}
+        end = ""+(parseInt(startHour)+1)+':'+startMinute;
       }
 
       var type = scheduleText[i][2];
       var instructor = scheduleText[i][3];
       var description = classDescriptions[classDescriptions.indexOf(type)+1][0];
 			var color = classDescriptions[classDescriptions.indexOf(type)+1][1];
-      $("."+dayOfWeek).append("<li class='single-event' data-start='"+start+"' data-end='"+end+"' data-event='"+type+"' data-content = '"+description+"' data-color = '"+color+"'><a href='#0'><em class='event-name'>"+type+"</em></a></li>");
+      $("."+dayOfWeek).append("<li class='single-event' data-rounded='"+rounded+"' data-start='"+start+"' data-end='"+end+"' data-event='"+type+"' data-content = '"+description+"' data-color = '"+color+"'><a href='#0'><em class='event-name'>"+type+"</em></a></li>");
 			 $(".cd-schedule .single-event[data-event='"+type+"']").css("background", color);
 			 $(".cd-schedule .single-event[data-event='"+type+"']:hover").css("background", color+30);
   }
@@ -155,7 +166,10 @@ jQuery(document).ready(function($){
 			//place each event in the grid -> need to set top position and height
 			var start = getScheduleTimestamp($(this).attr('data-start')),
 				duration = getScheduleTimestamp($(this).attr('data-end')) - start;
-
+			if(duration >60){
+				duration =60;
+				console.log("duration adjusted");
+			}
 			var startTime = $(this).attr('data-start').replace(':','');
 			var eventTop = ($("."+startTime).position().top)-self.eventSlotHeight;
 			var eventHeight = self.eventSlotHeight*duration/self.timelineUnitDuration;
