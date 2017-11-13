@@ -1,21 +1,21 @@
 .nav-mobile{
-	width:50px;
-	top:5px;
-	right:5px;
+	width:13%;
+	top:1%;
+	right:1.5%;
 	display:none;
 	position:fixed;
 	border:3px solid #49b293;
 	background-color: var(--bg);
-	padding:8px;
+	padding:3%;
 	transition: all 0.5s;
 	z-index:2;
 	border-radius:10px;
  }
 
 .nav-mobile div{
-     height:4px;
+     height:6px;
 		 width:100%;
-     margin:4px 0px;
+     margin:6px 0px;
      background-color:#fff;
      transition: all 0.5s;
 }
@@ -77,9 +77,9 @@
  }
 
  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
- @media screen and (max-height: 450px) {
+ @media screen and (max-height: 900px) {
      .sidenav {padding-top: 15px;}
-     .sidenav a {font-size: 18px;}
+     .sidenav a {font-size: 3em;}
  }
 
 @media screen and (max-width:1000px){
@@ -99,7 +99,7 @@
     }
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 900px){
     .feature{
         display: block;
     }
