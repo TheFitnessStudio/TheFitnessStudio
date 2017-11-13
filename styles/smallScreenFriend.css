@@ -99,7 +99,7 @@
     }
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 1000px){
     .feature{
         display: block;
     }
@@ -136,7 +136,7 @@
 			width: 100%;
 		}
 
-		.feature figure img{
+		.feature figure{
 			display:block;
 			width: 100%;
 			margin:auto;
