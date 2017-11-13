@@ -34,9 +34,9 @@
 			font-size:3em;
 		}
 
-		nav{
+		/*nav{
 			width:auto;
-		}
+		}*/
 
 		main > :nth-child(odd), main > :nth-child(even){
         border-left: none;
