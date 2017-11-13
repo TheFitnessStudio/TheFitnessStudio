@@ -11,10 +11,8 @@ $(document).ready(function() {
 	$(window).bind('scroll', function () {
 	    if ($(window).scrollTop() > $('.banner').height() && $(window).width()>800) {
 	        $('nav').addClass('fixed');
-					$('.nav-items ul').addClass('fixed-ul');
 	    } else {
 	        $('nav').removeClass('fixed');
-					$('.nav-items ul').removeClass('fixed-ul');
 	    }
 	});
 
