@@ -49,7 +49,6 @@ $(document).ready(function() {
 
 	function logoSizing(){
 		var margin ='0px';
-		console.log($(window).width());
 		if ($(window).width()<985){
 			margin = (($('.banner').width()-$('.logo').width())/2) +'px';
 			$('.logo').css('margin-left', margin);

@@ -2,7 +2,6 @@ $(document).ready(function() {
 	var folderId = '0B0CnM1uDWPpTWUlJQy1iQXFhVXc';
 	getDriveFolder(folderId);
 	$(".button.events").click(function(){
-		console.log($("#moreEvents").is(":empty"));
 		if($("#moreEvents").is(":empty")){
 			getDriveFolder(folderId);
 		}
@@ -62,7 +61,6 @@ function addPic(appendTo, size, file){
 		'/preview" width="'+size+'px" height="'+size+'px"></iframe>');
 
 	var offset = $(".drive-img:last-of-type").offset();
-	console.log(offset);
 	appendTo.append(
 		'<div style = "height:'+size+'px;'+ 'width:'+size+'px;'+
 		'left:'+offset.left+'px;'+ 'top:'+(offset.top-60)+'px;"'+
