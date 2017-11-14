@@ -168,7 +168,6 @@ jQuery(document).ready(function($){
 				duration = getScheduleTimestamp($(this).attr('data-end')) - start;
 			if(duration >60){
 				duration =60;
-				console.log("duration adjusted");
 			}
 			var startTime = $(this).attr('data-start').replace(':','');
 			var eventTop = ($("."+startTime).position().top)-self.eventSlotHeight;

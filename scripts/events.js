@@ -6,6 +6,11 @@ $(document).ready(function() {
 			getDriveFolder(folderId);
 		}
 	});
+
+	$('.drive-viewer-toolstrip').each(function(){
+		$(this).remove();
+		console.log("done");
+	});
 });
 
 function getDriveFolder(folderId){
