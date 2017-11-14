@@ -19,6 +19,10 @@
 		.banner h1{
         display:none;
     }
+
+    #schedule li a{
+      padding: 10px;
+    }
 }
 
 @media screen and (max-width: 1000px){
@@ -37,10 +41,6 @@
 		/*nav{
 			width:auto;
 		}*/
-
-		/*main > :nth-child(odd), main > :nth-child(even){
-        border-left: none;
-    }*/
 
 		.feature{
 			width:98%;
