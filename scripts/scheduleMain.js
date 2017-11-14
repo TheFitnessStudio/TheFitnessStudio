@@ -68,7 +68,7 @@ jQuery(document).ready(function($){
       var instructor = scheduleText[i][3];
       var description = classDescriptions[classDescriptions.indexOf(type)+1][0];
 			var color = classDescriptions[classDescriptions.indexOf(type)+1][1];
-      $("."+dayOfWeek).append("<li class='single-event' data-rounded='"+rounded+"' data-start='"+start+"' data-end='"+end+"' data-event='"+type+"' data-content = '"+description+"' data-color = '"+color+"'><a href='#0'><em class='event-name'>"+type+"</em></a></li>");
+      $("."+dayOfWeek).append("<li class='single-event' data-rounded='"+rounded+"' data-start='"+start+"' data-end='"+end+"' data-event='"+type+"' data-content = '"+description+"' data-color = '"+color+"'><a href='#0'><em class='event-name'>"+type+"  <span style='font-size:65%;'>"+instructor+"</span></em></a></li>");
 			 $(".cd-schedule .single-event[data-event='"+type+"']").css("background", color);
 			 $(".cd-schedule .single-event[data-event='"+type+"']:hover").css("background", color+30);
   }

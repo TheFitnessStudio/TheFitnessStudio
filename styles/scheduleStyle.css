@@ -28,6 +28,11 @@ Main Components
 .break{
     background-color: grey;
     border:none;
+    height:10px !important;
+}
+
+.break + li span{
+  margin-top: 10px !important;
 }
 
 .cd-schedule {
