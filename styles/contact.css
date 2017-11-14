@@ -1,0 +1,13 @@
+.contact{
+  width: 40%;
+  margin-left: 20%;
+}
+
+input:required:invalid{
+  border: 2px solid red;
+}
+
+
+input:required:valid{
+  border: 2px solid green;
+}

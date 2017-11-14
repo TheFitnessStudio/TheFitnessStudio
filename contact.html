@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--Web deisgn by Stephanie Donnelly-->
+<html lang="en">
+  <head>
+	  <meta charset="utf-8" />
+		<link rel="stylesheet" href='styles/reset.css'/>
+		<script type='text/javascript' src='scripts/jquery.min.js'></script>
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Kalam" />
+    <link rel = 'stylesheet' href="styles/main.css" />
+    <link rel = 'stylesheet' href="styles/contact.css" />
+    <link rel = 'stylesheet' href="styles/smallScreenFriend.css">
+    <meta viewport content="width=device-width, initial-scale=1">
+    <title>The Fitness Studio</title>
+  </head>
+
+  <body>
+    <header>
+      <div class = "banner">
+
+          <img src= "images/logo.png" class = "logo">
+
+          <h1 class="title">The Fitness Studio<span class ="smaller">, LLC</span></h1>
+          <h2>We make fitness fun!</h2>
+  				<h3> 400 Warwick Ave, Warwick RI <br> (401)219-0259 <br> thefitnessstudiori@gmail.com</h3>
+      </div>
+        <nav>
+
+                <ul>
+                  <li><a href="index.html#home">Home</a></li>
+                  <li><a href="index.html#community">About Us</a></li>
+                  <li><a href="index.html#events">Events</a></li>
+                  <li><a href="index.html#schedule">Schedule</a></li>
+                  <li><a href="index.html#rates">Prices</a></li>
+  								<li><a  class="active" href="contact.html">Contact Us</a></li>
+                </ul>
+        </nav>
+  	</header>
+
+    <main>
+      <div class="feature contact">
+        <ul id="errors" class="<?php echo ($sr && !$cf['form_ok']) ? 'visible' : ''; ?>">
+      <li id="info">There were some problems with your form submission:</li>
+      <?php
+      if(isset($cf['errors']) && count($cf['errors']) > 0) :
+          foreach($cf['errors'] as $error) :
+      ?>
+      <li><?php echo $error ?></li>
+      <?php
+          endforeach;
+      endif;
+      ?>
+  </ul>
+  <p id="success" class="<?php echo ($sr && $cf['form_ok']) ? 'visible' : ''; ?>">Thanks for your message! We will get back to you ASAP!</p>
+      <form id="contact_form" action="contact.php" method="post" enctype="multipart/form-data">
+    	<div class="row">
+    		<label for="name">Your name:</label><br />
+    		<input id="name" class="input" name="name" type="text" required value="" size="30" /><br />
+    	</div>
+    	<div class="row">
+    		<label for="email">Your email:</label><br />
+    		<input id="email" class="input" name="email" type="text" required value="" size="30" /><br />
+    	</div>
+    	<div class="row">
+    		<label for="message">Your message:</label><br />
+    		<textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
+    	</div>
+    	<input id="submit_button" type="submit" value="Send email" />
+    </form>
+  </div>
+    </main>
+
+  </body>
+
+  <div class="clear"></div>
+<footer><p><i>&copy; 2017 Stephanie Donnelly </i><b>400 Warwick Avenue, Warwick, RI, US | (401) 219-0259</b></p></footer>
+</body>
+</html>
