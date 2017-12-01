@@ -1,11 +1,14 @@
 $(document).ready(function() {
   $('.single-event').each(function(){
     var rounded = $(this).attr('data-rounded');
-    $(this).find('span').each(function(){
+    var i = 0;
+    $(this).find('.event-date').each(function(){
+      i++;
       var time = this.innerHTML;
-      if(rounded== "yes"){
+      if(rounded == "yes"){
         time = add15(time);
       }
+
       var start = timeFormat(time.split('-')[0]);
       var end = timeFormat(time.split('-')[1]);
       this.innerHTML = start + " - " + end;
@@ -28,7 +31,7 @@ $(document).ready(function() {
     var startHour = start.split(':')[0], startMinute = start.split(':')[1];
     startMinute = String(Number(startMinute) + 15);
     var endHour = end.split(':')[0];
-    var newTime = startHour +':'+ startMinute +'-'+ endHour+':'+startMinute;
+    var newTime = startHour +':'+ startMinute +' - '+ endHour+':'+startMinute;
     return newTime;
   }
 });

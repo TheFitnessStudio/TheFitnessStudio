@@ -1,23 +1,23 @@
 jQuery(document).ready(function($){
 	var scheduleText = [
-    ['Monday','8:30','Cardio Sculpt','ND'],
-    ['Monday','17:30','Zumba','ND'],
-    ['Monday','18:30','Stretch & Tone','JG'],
-    ['Tuesday','8:30','Zumba','ND'],
-    ['Tuesday','17:30','Sculpt & Tone','KP'],
-    ['Tuesday','18:30','Zumba','ND'],
-    ['Wednesday','8:00','Spin','ND'],
-    ['Wednesday','16:30','Yoga','KP'],
-    ['Wednesday','17:30','Strong by Zumba','ND'],
-    ['Wednesday','18:30','Hip Hop','AG'],
-    ['Thursday','8:30','Zumba','ND'],
-    ['Thursday','17:30','Sculpt & Tone','KP'],
-    ['Thursday','18:30','Zumba','KP'],
-    ['Friday','20:00-23:00','Swing Dancing','TS'],
-    ['Saturday','8:00','Zumba','ND'],
-    ['Saturday','9:00','Cardio Mix','PD'],
-		['Saturday','10:15','Yoga','JG'],
-    ['Sunday','8:30','Step & Sculpt','ND']];
+    ['Monday','Cardio Sculpt','ND','8:30'],
+    ['Monday','Zumba','ND','17:30'],
+    ['Monday','Stretch & Tone','JG','18:30'],
+    ['Tuesday','Zumba','ND','8:30'],
+    ['Tuesday','Sculpt & Tone','KP','17:30'],
+    ['Tuesday','Zumba','ND','18:30'],
+    ['Wednesday','Spin','ND','8:00'],
+    ['Wednesday','Yoga','KP','16:30'],
+    ['Wednesday','Strong by Zumba','ND','17:30'],
+    ['Wednesday','Hip Hop','AG','18:30'],
+    ['Thursday','Zumba','ND','8:30'],
+    ['Thursday','Sculpt & Tone','KP','17:30'],
+    ['Thursday','Zumba','KP','18:30'],
+    ['Friday','Swing Dancing','TS','20:00','23:00'],
+    ['Saturday','Zumba','ND','8:00'],
+    ['Saturday','Cardio Mix','PD','9:00'],
+		['Saturday','Yoga','JG','10:15'],
+    ['Sunday','Step & Sculpt','ND','8:30']];
 
   var classDescriptions = [
     'Cardio Mix',['classDescriptions/cardioMix', '#5454f7'],
@@ -43,32 +43,36 @@ jQuery(document).ready(function($){
 
   for(var i=0; i<scheduleText.length; i++){
       var dayOfWeek = scheduleText[i][0];
-      var start = scheduleText[i][1];
+      var start = scheduleText[i][3];
       var end = " ";
 			var rounded = "none";
-      if(start.indexOf('-') > -1){
-				var splart = start.split('-');
-        start = splart[0];
-        end = splart[1];
-      }else{
-        var splart = start.split(':');
-				var startHour = splart[0];
-				var startMinute = splart[1];
-				if(startMinute== '15'){
-					start = startHour+':00';
-					rounded = "yes";
-				}else if(startMinute== '45'){
-					start = startHour+':30';
-					rounded = "yes";
-				}
-        end = ""+(parseInt(startHour)+1)+':'+startMinute;
-      }
 
-      var type = scheduleText[i][2];
-      var instructor = scheduleText[i][3];
+      var splart = start.split(':');
+			var startHour = splart[0];
+			var startMinute = splart[1];
+			var startMinuteNum = parseInt(startMinute);
+			if(startMinuteNum<= 15 && startMinuteNum != 0){
+				start = startHour+':00';
+				rounded = "yes";
+			}else if(startMinuteNum>= 16 && startMinuteNum <= 44 && startMinuteNum != 30){
+				start = startHour+':30';
+				rounded = "yes";
+			}else if(startMinuteNum>= 45 && startMinuteNum != 0){
+				start = ""+parseInt(startHour+1)+':00';
+				rounded = "yes";
+			}
+			if(scheduleText[i].length > 4){
+				end = scheduleText[i][4];
+			}else{
+      	end = ""+(parseInt(startHour)+1)+':'+startMinute;
+			}
+
+
+      var type = scheduleText[i][1];
+      var instructor = scheduleText[i][2];
       var description = classDescriptions[classDescriptions.indexOf(type)+1][0];
 			var color = classDescriptions[classDescriptions.indexOf(type)+1][1];
-      $("."+dayOfWeek).append("<li class='single-event' data-rounded='"+rounded+"' data-start='"+start+"' data-end='"+end+"' data-event='"+type+"' data-content = '"+description+"' data-color = '"+color+"'><a href='#0'><em class='event-name'>"+type+"  <span style='font-size:65%;'>"+instructor+"</span></em></a></li>");
+      $("."+dayOfWeek).append("<li class='single-event' data-rounded='"+rounded+"' data-start='"+start+"' data-end='"+end+"' data-event='"+type+"' data-content = '"+description+"' data-color = '"+color+"' data-instructor= '"+instructor+"'><a href='#0'><em class='event-name'>"+type+"  <span style='font-size:65%;'>"+instructor+"</span></em></a></li>");
 			 $(".cd-schedule .single-event[data-event='"+type+"']").css("background", color);
 			 $(".cd-schedule .single-event[data-event='"+type+"']:hover").css("background", color+30);
   }
