@@ -7,8 +7,8 @@ jQuery(document).ready(function($){
     ['Tuesday','Sculpt & Tone','KP','17:30'],
     ['Tuesday','Zumba','ND','18:30'],
     ['Wednesday','Spin','ND','8:00'],
-    ['Wednesday','Yoga','KP','16:30'],
-    ['Wednesday','Strong by Zumba','ND','17:30'],
+    ['Wednesday','Zumba','ND','16:30'],
+    ['Wednesday','Yoga','ND','17:30'],
     ['Wednesday','Hip Hop','AG','18:30'],
     ['Thursday','Zumba','ND','8:30'],
     ['Thursday','Sculpt & Tone','KP','17:30'],
@@ -16,8 +16,9 @@ jQuery(document).ready(function($){
     ['Friday','Swing Dancing','TS','20:00','23:00'],
     ['Saturday','Zumba','ND','8:00'],
     ['Saturday','Cardio Mix','PD','9:00'],
-		['Saturday','Yoga','JG','10:15'],
-    ['Sunday','Step & Sculpt','ND','8:30']];
+		['Saturday','Yoga','KP / JG','10:15'],
+    ['Sunday','Step & Sculpt','ND','8:30']
+	];
 
   var classDescriptions = [
     'Cardio Mix',['classDescriptions/cardioMix', '#5454f7'],
@@ -39,13 +40,23 @@ jQuery(document).ready(function($){
     'Zumba',['classDescriptions/zumba', '#cded4e'],
 
     'Swing Dancing',['classDescriptions/swingDancing', '#cefc85'],
-		'Yoga',['classDescriptions/yoga', '#f4aa42']];
+		'Yoga',['classDescriptions/yoga', '#f4aa42']
+	];
+
+	var instructors = [
+		'ND', ['Nancy D.'],
+		'JG', ['Jill G.'],
+		'KP', ['Kathy P.'],
+		'PD', ['Patty D.'],
+		'AG', ['Amanda G.'],
+		'TS', ['Tod Schmenk']
+	];
 
   for(var i=0; i<scheduleText.length; i++){
       var dayOfWeek = scheduleText[i][0];
       var start = scheduleText[i][3];
       var end = " ";
-			var rounded = "none";
+			var rounded = 0;
 
       var splart = start.split(':');
 			var startHour = splart[0];
@@ -53,13 +64,13 @@ jQuery(document).ready(function($){
 			var startMinuteNum = parseInt(startMinute);
 			if(startMinuteNum<= 15 && startMinuteNum != 0){
 				start = startHour+':00';
-				rounded = "yes";
+				rounded = startMinuteNum;
 			}else if(startMinuteNum>= 16 && startMinuteNum <= 44 && startMinuteNum != 30){
 				start = startHour+':30';
-				rounded = "yes";
+				rounded = startMinuteNum;
 			}else if(startMinuteNum>= 45 && startMinuteNum != 0){
 				start = ""+parseInt(startHour+1)+':00';
-				rounded = "yes";
+				rounded = -startMinuteNum;
 			}
 			if(scheduleText[i].length > 4){
 				end = scheduleText[i][4];
@@ -71,8 +82,9 @@ jQuery(document).ready(function($){
       var type = scheduleText[i][1];
       var instructor = scheduleText[i][2];
       var description = classDescriptions[classDescriptions.indexOf(type)+1][0];
+			var instructorName = instructors[instructors.indexOf(instructor)+1][0];
 			var color = classDescriptions[classDescriptions.indexOf(type)+1][1];
-      $("."+dayOfWeek).append("<li class='single-event' data-rounded='"+rounded+"' data-start='"+start+"' data-end='"+end+"' data-event='"+type+"' data-content = '"+description+"' data-color = '"+color+"' data-instructor= '"+instructor+"'><a href='#0'><em class='event-name'>"+type+"  <span style='font-size:65%;'>"+instructor+"</span></em></a></li>");
+      $("."+dayOfWeek).append("<li class='single-event' data-rounded='"+rounded+"' data-start='"+start+"' data-end='"+end+"' data-event='"+type+"' data-content = '"+description+"' data-instructorname = '"+instructorName+"' data-color = '"+color+"' data-instructor= '"+instructor+"'><a href='#0'><em class='event-name'>"+type+"  <span style='font-size:65%;'>"+instructor+"</span></em></a></li>");
 			 $(".cd-schedule .single-event[data-event='"+type+"']").css("background", color);
 			 $(".cd-schedule .single-event[data-event='"+type+"']:hover").css("background", color+30);
   }
@@ -197,6 +209,7 @@ jQuery(document).ready(function($){
 		this.modal.attr('data-event', event.parent().attr('data-event'));
 
 		//update event content
+		// TODO: add instructor name to modal. (already stored as data-instructorname)
 		this.modalBody.find('.event-info').load(event.parent().attr('data-content')+'.html .event-info > *', function(data){
 			//once the event content has been loaded
 			self.element.addClass('content-loaded');

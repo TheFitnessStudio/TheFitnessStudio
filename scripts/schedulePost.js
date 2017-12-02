@@ -5,8 +5,8 @@ $(document).ready(function() {
     $(this).find('.event-date').each(function(){
       i++;
       var time = this.innerHTML;
-      if(rounded == "yes"){
-        time = add15(time);
+      if(Number(rounded) != 0){
+        time = unRound(time, rounded);
       }
 
       var start = timeFormat(time.split('-')[0]);
@@ -26,10 +26,13 @@ $(document).ready(function() {
       return time;
   }
 
-  function add15(time){
+  function unRound(time, roundFrom){
     var start = time.split('-')[0], end = time.split('-')[1];
     var startHour = start.split(':')[0], startMinute = start.split(':')[1];
-    startMinute = String(Number(startMinute) + 15);
+    startMinute = String(Number(startMinute) + roundFrom);
+    if(roundFrom <0){
+      startHour=String(Number(startHour)-1);
+    }
     var endHour = end.split(':')[0];
     var newTime = startHour +':'+ startMinute +' - '+ endHour+':'+startMinute;
     return newTime;
