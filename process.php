@@ -3,7 +3,7 @@ if( isset($_POST) ){
 
     //form validation vars
     $formok = true;
-    //$errors = array();
+    $errors = array();
 
     //submission data
     $ipaddress = $_SERVER['REMOTE_ADDR'];
@@ -13,6 +13,8 @@ if( isset($_POST) ){
     //form data
     $name = $_POST['name'];
     $email = $_POST['email'];
+    $telephone = $_POST['telephone'];
+    $enquiry = $_POST['enquiry'];
     $message = $_POST['message'];
 
     //validate form data
@@ -39,21 +41,22 @@ if( isset($_POST) ){
         $errors[] = "You have not entered a message";
     }
     //validate message is greater than 20 characters
-    elseif(strlen($message) < 1){
+    elseif(strlen($message) < 20){
         $formok = false;
-        $errors[] = "Your message must be greater than 1 character";
+        $errors[] = "Your message must be greater than 20 characters";
     }
 
     //send email if all is ok
     if($formok){
-
       ini_set("sendmail_from","stephdonnelly1@gmail.com");
-        $headers = "From: stephdonnelly1@gmail.com" . "\r\n";
+        $headers = "From: stephdonnelly@gmail.com" . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
         $emailbody = "<p>You have received a new message from the enquiries form on your website.</p>
                       <p><strong>Name: </strong> {$name} </p>
                       <p><strong>Email Address: </strong> {$email} </p>
+                      <p><strong>Telephone: </strong> {$telephone} </p>
+                      <p><strong>Enquiry: </strong> {$enquiry} </p>
                       <p><strong>Message: </strong> {$message} </p>
                       <p>This message was sent from the IP Address: {$ipaddress} on {$date} at {$time}</p>";
 
@@ -66,6 +69,8 @@ if( isset($_POST) ){
         'posted_form_data' => array(
             'name' => $name,
             'email' => $email,
+            'telephone' => $telephone,
+            'enquiry' => $enquiry,
             'message' => $message
         ),
         'form_ok' => $formok,
