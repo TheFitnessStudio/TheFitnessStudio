@@ -1,0 +1,46 @@
+@import url("main.css");
+
+main h1{
+  font-size: 3em;
+  text-align:center;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+}
+
+main h3{
+  font-size: 2em;
+}
+
+main p{
+  font-size: 1.5em;
+  padding-left: 6px;
+}
+
+.prices{
+  border-radius: 20px;
+  border: 2px solid grey;
+}
+
+main span{
+  font-weight: bold;
+}
+
+i{
+  font-style: italic;
+}
+
+.center{
+  text-align:center;
+}
+
+.feature p:first-of-type{
+  padding-top: 10px;
+}
+
+.feature div{
+  padding:10px;
+}
+
+.feature a{
+  font-size: 100%;
+}
