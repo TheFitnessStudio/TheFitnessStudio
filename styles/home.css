@@ -1,28 +1,26 @@
 @import url("main.css");
 
-main > :nth-child(even){
-    border-right: 25px solid var(--accent1);
-    border-left: 25px solid var(--accent1);
-}
-
-main > :nth-child(odd){
-    border-right: 25px solid var(--accent2);
-    border-left: 25px solid var(--accent2);
-}
-
-@media screen and (max-width: 350px){
-	main > :nth-child(odd){
-		border-right: 15px solid var(--accent2);
-	}
-	 main > :nth-child(even){
-			border-right: 15px solid var(--accent1);
-	}
-}
-
 main div.feature{
     padding-left: 10px;
     padding-top:  10px;
+    border-width: 25px;
 }
+main > :nth-child(even){
+    border-right: solid var(--accent1);
+    border-left: solid var(--accent1);
+}
+
+main > :nth-child(odd){
+    border-right: solid var(--accent2);
+    border-left: solid var(--accent2);
+}
+
+@media screen and (max-width:800px){
+	main div.feature{
+    border-width: 15px;
+  }
+}
+
 
 .fb{
     margin-left: 10px;

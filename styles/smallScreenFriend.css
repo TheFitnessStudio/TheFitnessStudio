@@ -4,101 +4,113 @@
      padding: 20px;
  }
 
-@media screen and (max-width:1000px){
-		.logo{
-			width:300px;
-		}
-		.banner{
-        display: block;
-    }
 
-    .logo{
-			float:none;
-    }
+ @media screen and (max-width: 321px){
+ 	.feature{
+ 		border-left: none;
+ 		margin-left:2%;
+ 		width: 88%;
+ 	}
+ }
 
-		.banner h1{
-        display:none;
-    }
 
-    #schedule li a{
-      padding: 10px;
-    }
-}
 
-@media screen and (max-width: 1000px){
-    .feature{
-        display: block;
-    }
+ @media screen and (max-width: 481px){
+ 		.fb-feed{
+ 			display: none;
+ 		}
+ 		.fb-head{
+ 			display:block;
+ 		}
+     #fb.feature{
+   		display:none;
+   	}
+   	#like-button{
+   		display:block;
+   	}
+ }
 
-    .feature figure{
-        float: none;
-    }
+@media screen and (max-width: 961px){
+  .logo{
+    float:none;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  .banner{
+      display: block;
+      height: 15em;
+      font-size:200%;
+  }
 
-		.title{
-			font-size:3em;
-		}
+  .banner h1{
+    display:none;
+  }
 
-		/*nav{
-			width:auto;
-		}*/
+  #schedule li a{
+    padding: 10px;
+  }
 
-		.feature{
-			width:98%;
-			margin:1%;
-		}
+  .feature{
+    display: block;
+    width:98%;
+		margin:1%;
+    font-size:100%;
+  }
 
-		.feature figure{
-			width: 100%;
-		}
-
-		.feature figure{
-			display:block;
-			width: 100%;
-			margin:auto;
-		}
-
-		#cal-button{
-			display:block;
-		}
-		footer{
-			height:4em;
-		}
-		footer p{
-			text-align: center;
-		}
-		footer b, footer i{
-			float:none;
-		}
-}
-
-@media screen and (max-width: 600px){
-		.fb-feed{
-			display: none;
-		}
-		.fb-head{
-			display:block;
-		}
-}
-
-@media screen and (max-width: 500px){
-
-	.logo{
-		width:250px;
-	}
-
-	.feature{
-		border-left: none;
-		margin-left:2%;
-		width: 88%;
-	}
-
-}
-
-@media screen and (max-width: 430px){
-	#fb.feature{
-		display:none;
-	}
-	#like-button{
+  .feature figure{
+    float: none;
 		display:block;
+		width: 100%;
+		margin:auto;
+  }
+
+  .feature figure img{
+    max-width:none;
+  }
+
+	.title{
+		font-size:3em;
+	}
+
+	/*nav{
+		width:auto;
+	}*/
+
+	#cal-button{
+		display:block;
+	}
+
+  .cd-schedule{
+    font-size:150%;
+  }
+
+  figcaption{
+    font-size: 120%;
+  }
+
+  .feature h2{
+    font-size: 140%;
+  }
+
+  .feature h3{
+    font-size: 120%;
+  }
+  .cd-schedule .event-name {
+    font-size: 3.4rem;
+  }
+
+  .cd-schedule .event-date{
+    font-size:2.5rem;
+  }
+
+	footer{
+		height:4em;
+	}
+	footer p{
+		text-align: center;
+	}
+	footer b, footer i{
+		float:none;
 	}
 }

@@ -1,13 +1,13 @@
 
 $(document).ready(function() {
-	window.addEventListener("orientationchange", function() {
+	/*window.addEventListener("orientationchange", function() {
     logoSizing();
     //alert(window.orientation);
 	}, false);
 	window.addEventListener("resize", function() {
 	  logoSizing();
 	}, false);
-	logoSizing();
+	logoSizing();*/
 	$(window).bind('scroll', function () {
 	    if ($(window).scrollTop() > $('.banner').height() && $(window).width()>800) {
 	        $('nav').addClass('fixed');
@@ -16,7 +16,7 @@ $(document).ready(function() {
 	    }
 	});
 
-	function logoSizing(){
+	/*function logoSizing(){
 		var margin ='0px';
 		if ($(window).width()<985){
 			margin = (($('.banner').width()-$('.logo').width())/2) +'px';
@@ -25,4 +25,4 @@ $(document).ready(function() {
 			$('.logo').css('margin-left', margin);
 		}
 	}
-});
+});*/
