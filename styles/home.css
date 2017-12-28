@@ -27,11 +27,11 @@ main > :nth-child(odd){
 }
 
 #schedule{
-  border-radius:20px;
+  border:none;
 }
 
 .feature p{
-    font-size: 2em;
+    font-size: 1.3em;
     margin:auto;
 }
 
@@ -92,7 +92,7 @@ main > :nth-child(odd){
   top:0;
 }
 
-.money p{
+#rates p{
   font-size:1.5em;
   padding: 5px;
 }
@@ -166,4 +166,19 @@ div.uiScaledContainer.2zfr{
 
 #fb iframe{
   width:100%;
+}
+
+#to-top{
+  position: fixed;
+  top:10px;
+  right:30px;
+  width:5%;
+  border:none;
+  border-radius:10px;
+  z-index:4;
+}
+
+#to-top img{
+  width:110%;
+  transition: opacity 1s;
 }

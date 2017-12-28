@@ -4,33 +4,23 @@
      padding: 20px;
  }
 
-
- @media screen and (max-width: 321px){
- 	.feature{
- 		border-left: none;
- 		margin-left:2%;
- 		width: 88%;
- 	}
+ @media screen and (max-width: 1290px){
+   .banner{
+     font-size:110%;
+   }
+   .title{
+     font-size:222%;
+   }
+   nav{
+     font-size:65%
+   }
  }
 
+@media screen and (max-width: 1000px){
+  .cd-schedule .event-modal .header-bg{
+    background-color: #333;
+  }
 
-
- @media screen and (max-width: 481px){
- 		.fb-feed{
- 			display: none;
- 		}
- 		.fb-head{
- 			display:block;
- 		}
-     #fb.feature{
-   		display:none;
-   	}
-   	#like-button{
-   		display:block;
-   	}
- }
-
-@media screen and (max-width: 961px){
   .logo{
     float:none;
     width: 60%;
@@ -39,23 +29,37 @@
   }
   .banner{
       display: block;
-      height: 15em;
-      font-size:200%;
+      height: 12.5em;
+      font-size: 120%;
   }
 
   .banner h1{
     display:none;
   }
 
-  #schedule li a{
-    padding: 10px;
+	.title{
+		font-size:3em;
+	}
+
+  nav{
+    font-size: 65%;
+  }
+
+  nav ul{
+    width:auto;
+    margin:0;
+  }
+
+  nav li{
+    padding-left: 0;
+    width:100%;
   }
 
   .feature{
     display: block;
     width:98%;
 		margin:1%;
-    font-size:100%;
+    font-size:70%;
   }
 
   .feature figure{
@@ -69,20 +73,15 @@
     max-width:none;
   }
 
-	.title{
-		font-size:3em;
-	}
-
-	/*nav{
-		width:auto;
-	}*/
-
 	#cal-button{
 		display:block;
 	}
 
   .cd-schedule{
-    font-size:150%;
+    font-size:120%;
+  }
+  #schedule li a{
+    padding: 10px;
   }
 
   figcaption{
@@ -97,11 +96,18 @@
     font-size: 120%;
   }
   .cd-schedule .event-name {
-    font-size: 3.4rem;
+    font-size: 2.4rem;
   }
 
   .cd-schedule .event-date{
-    font-size:2.5rem;
+    font-size:2rem;
+  }
+
+  #to-top img{
+    width:220%;
+  }
+  #to-top{
+    right:55px;
   }
 
 	footer{
@@ -113,4 +119,30 @@
 	footer b, footer i{
 		float:none;
 	}
+}
+
+@media screen and (max-width: 481px){
+   .fb-feed{
+     display: none;
+   }
+   .fb-head{
+     display:block;
+   }
+    #fb.feature{
+     display:none;
+   }
+   #like-button{
+     display:block;
+   }
+   #to-top{
+     right:25px;
+   }
+}
+
+@media screen and (max-width: 321px){
+ .feature{
+   border-left: none;
+   margin-left:2%;
+   width: 88%;
+ }
 }

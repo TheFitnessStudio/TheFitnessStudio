@@ -25,7 +25,7 @@ jQuery(document).ready(function($){
 
     'Cardio Sculpt',['classDescriptions/cardioSculpt','#80a4f2'],
 
-    'Step & Sculpt',['classDescriptions/stepSculpt','#5fef73'],
+    'Step & Sculpt',['classDescriptions/stepSculpt','#44ab52'],
 
     'Hip Hop',['classDescriptions/hipHop','#2acaf7'],
 
@@ -37,9 +37,9 @@ jQuery(document).ready(function($){
 
     'Stretch & Tone',['classDescriptions/stretchTone', '#46a30d'],
 
-    'Zumba',['classDescriptions/zumba', '#cded4e'],
+    'Zumba',['classDescriptions/zumba', '#b7da29'],
 
-    'Swing Dancing',['classDescriptions/swingDancing', '#cefc85'],
+    'Swing Dancing',['classDescriptions/swingDancing', '#5f4aad'],
 		'Yoga',['classDescriptions/yoga', '#f4aa42']
 	];
 

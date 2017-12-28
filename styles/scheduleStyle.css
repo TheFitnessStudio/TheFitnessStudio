@@ -3,16 +3,8 @@
 Primary style
 
 -------------------------------- */
-*, *::after, *::before {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-size: 1.6rem;
+.cd-schedule{
+  padding:1px 0;
 }
 
 .cd-schedule a {
@@ -26,9 +18,7 @@ Main Components
 
 -------------------------------- */
 .break{
-    background-color: grey;
-    border:none;
-    height:10px !important;
+    border-top: 10px solid grey;
 }
 
 .break + li span{
@@ -47,7 +37,7 @@ Main Components
   display: none;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
   .cd-schedule {
     width: 100%;
     max-width: 1400px;
@@ -71,7 +61,7 @@ Main Components
   padding-left: 1%;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1000px) {
   .cd-schedule .timeline {
     display: block;
     position: absolute;
@@ -191,7 +181,7 @@ Main Components
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
   .cd-schedule .events {
     float: left;
     width: 100%;
@@ -255,7 +245,7 @@ Main Components
     margin-right: 0;
   }
   .cd-schedule .events .single-event a {
-    padding: 1.1em;
+    padding: 0.4em;
   }
   .cd-schedule .events .single-event:last-of-type {
     /* reset style */
@@ -294,9 +284,9 @@ Main Components
   font-size: 2.4rem;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
   .cd-schedule .event-name {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -307,42 +297,6 @@ Main Components
   line-height: 1.2;
   margin-bottom: .2em;
 }
-/*
-.cd-schedule .single-event[data-event="Cardio Mix"],
-.cd-schedule [data-event="Cardio Mix"] .header-bg {
-  background: #5454f7;
-}
-
-.cd-schedule .single-event[data-event="Cardio Mix"]:hover {
-  background: #618da1;
-}
-
-.cd-schedule .single-event[data-event="Cardio Sculpt"],
-.cd-schedule [data-event="Cardio Sculpt"] .header-bg {
-  background: #80a4f2;
-}
-
-.cd-schedule .single-event[data-event="Cardio Sculpt"]:hover {
-  background: #513e63;
-}
-
-.cd-schedule .single-event[data-event="Step & Sculpt"],
-.cd-schedule [data-event="Step & Sculpt"] .header-bg {
-  background: #A2B9B2;
-}
-
-.cd-schedule .single-event[data-event="Step & Sculpt"]:hover {
-  background: #b1c4be;
-}
-
-.cd-schedule .single-event[data-event="Hip Hop"],
-.cd-schedule [data-event="Hip Hop"] .header-bg {
-  background: #f6b067;
-}
-
-.cd-schedule .single-event[data-event="Hip Hop"]:hover {
-  background: #f7bd7f;
-}*/
 
 .cd-schedule .event-modal {
   position: fixed;
@@ -482,7 +436,7 @@ Main Components
   transition: none;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
   .cd-schedule .event-modal {
     /* reset style */
     right: auto;
@@ -576,7 +530,7 @@ Main Components
   -webkit-overflow-scrolling: touch;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
   .cd-schedule.animation-completed .event-modal .close,
   .cd-schedule.content-loaded.animation-completed .event-modal .event-info {
     /* 	the .animation-completed class is added when the modal animation is completed

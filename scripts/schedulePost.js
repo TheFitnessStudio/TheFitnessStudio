@@ -1,11 +1,11 @@
 $(document).ready(function() {
   $('.single-event').each(function(){
-    var rounded = $(this).attr('data-rounded');
+    var rounded = parseInt($(this).attr('data-rounded'), 10);
     var i = 0;
     $(this).find('.event-date').each(function(){
       i++;
       var time = this.innerHTML;
-      if(Number(rounded) != 0){
+      if(rounded != 0){
         time = unRound(time, rounded);
       }
 
@@ -29,9 +29,9 @@ $(document).ready(function() {
   function unRound(time, roundFrom){
     var start = time.split('-')[0], end = time.split('-')[1];
     var startHour = start.split(':')[0], startMinute = start.split(':')[1];
-    startMinute = String(Number(startMinute) + roundFrom);
+    startMinute = String(parseInt(startMinute, 10) + roundFrom);
     if(roundFrom <0){
-      startHour=String(Number(startHour)-1);
+      startHour=String(parseInt(startHour, 10)-1);
     }
     var endHour = end.split(':')[0];
     var newTime = startHour +':'+ startMinute +' - '+ endHour+':'+startMinute;
