@@ -1,0 +1,14 @@
+@import url("main.css");
+
+blockquote{
+  padding: 2% 0;
+  width: 70%;
+  margin-left:15%;
+  border-bottom: 2px solid var(--accent1);
+}
+
+main div{
+  background-color: var(--banner-color);
+  width:70%;
+  margin: 0 15%;
+}
