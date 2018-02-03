@@ -54,30 +54,13 @@ jQuery(document).ready(function($){
 
   for(var i=0; i<scheduleText.length; i++){
       var dayOfWeek = scheduleText[i][0];
-      var start = scheduleText[i][3];
-      var end = " ";
-			var rounded = 0;
-
-      var splart = start.split(':');
-			var startHour = splart[0];
-			var startMinute = splart[1];
-			var startMinuteNum = parseInt(startMinute);
-			if(startMinuteNum<= 15 && startMinuteNum != 0){
-				start = startHour+':00';
-				rounded = startMinuteNum;
-			}else if(startMinuteNum>= 16 && startMinuteNum <= 44 && startMinuteNum != 30){
-				start = startHour+':30';
-				rounded = startMinuteNum;
-			}else if(startMinuteNum>= 45 && startMinuteNum != 0){
-				start = ""+parseInt(startHour+1)+':00';
-				rounded = -startMinuteNum;
-			}
+			var durationInfo = getDuration(scheduleText[i][3]);
+			var start = durationInfo[0];
+			var end = durationInfo[1];
 			if(scheduleText[i].length > 4){
 				end = scheduleText[i][4];
-			}else{
-      	end = ""+(parseInt(startHour)+1)+':'+startMinute;
 			}
-
+			var rounded = durationInfo[2];
 
       var type = scheduleText[i][1];
       var instructor = scheduleText[i][2];
@@ -476,3 +459,26 @@ jQuery(document).ready(function($){
 		});
 	}
 });
+
+function getDuration(start){
+	var end = " ";
+	var rounded = 0;
+
+	var splart = start.split(':');
+	var startHour = splart[0];
+	var startMinute = splart[1];
+	var startMinuteNum = parseInt(startMinute);
+	if(startMinuteNum<= 15 && startMinuteNum != 0){
+		start = startHour+':00';
+		rounded = startMinuteNum;
+	}else if(startMinuteNum>= 16 && startMinuteNum <= 44 && startMinuteNum != 30){
+		start = startHour+':30';
+		rounded = startMinuteNum;
+	}else if(startMinuteNum>= 45 && startMinuteNum != 0){
+		start = ""+parseInt(startHour+1)+':00';
+		rounded = -startMinuteNum;
+	}
+	end = ""+(parseInt(startHour)+1)+':'+startMinute;
+
+	return [start, end, rounded];
+}

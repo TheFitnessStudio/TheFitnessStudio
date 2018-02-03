@@ -1,20 +1,27 @@
- /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
- #main {
-     transition: margin-left .5s;
-     padding: 20px;
- }
+.plain-schedule{
+  display:none;
+  margin-left:  15%;
+  width:70%;
+  margin-top: 20px;
+  color: var(--text-color);
+  border-radius: 20px;
+  margin-bottom: 10px;
+  padding:20px;
+  padding-top:40px;
+  background-color: var(--banner-color);
+}
 
- @media screen and (max-width: 1290px){
-   .banner{
-     font-size:110%;
-   }
-   .title{
-     font-size:222%;
-   }
-   nav{
-     font-size:65%
-   }
+@media screen and (max-width: 1290px){
+ .banner{
+   font-size:110%;
  }
+ .title{
+   font-size:222%;
+ }
+ nav{
+   font-size:65%
+ }
+}
 
 @media screen and (max-width: 1000px){
   .cd-schedule .event-modal .header-bg{
@@ -73,9 +80,21 @@
     max-width:none;
   }
 
+  .price-table{
+    font-size:70%;
+  }
+
 	#cal-button{
 		display:block;
 	}
+
+  .cd-schedule{
+    display:none;
+  }
+
+  .plain-schedule{
+    display:block;
+  }
 
   .cd-schedule{
     font-size:120%;
