@@ -6,7 +6,6 @@ jQuery(document).ready(function($){
     ['Tuesday','Zumba','ND','8:30'],
     ['Tuesday','Sculpt & Tone','KP','17:30'],
     ['Tuesday','Zumba','ND','18:30'],
-    ['Wednesday','Spin','ND','8:00'],
     ['Wednesday','Zumba','ND','16:30'],
     ['Wednesday','Yoga','ND','17:30'],
     ['Wednesday','Hip Hop','AG','18:30'],
