@@ -37,8 +37,6 @@ jQuery(document).ready(function($){
     'Stretch & Tone',['classDescriptions/stretchTone', '#46a30d'],
 
     'Zumba',['classDescriptions/zumba', '#b7da29'],
-
-    'Swing Dancing',['classDescriptions/swingDancing', '#5f4aad'],
 		'Yoga',['classDescriptions/yoga', '#f4aa42']
 	];
 
@@ -47,8 +45,7 @@ jQuery(document).ready(function($){
 		'JG', ['Jill G.'],
 		'KP', ['Kathy P.'],
 		'PD', ['Patty D.'],
-		'AG', ['Amanda G.'],
-		'TS', ['Tod Schmenk']
+		'AG', ['Amanda G.']
 	];
 
   for(var i=0; i<scheduleText.length; i++){
