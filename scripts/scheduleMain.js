@@ -12,7 +12,7 @@ jQuery(document).ready(function($){
     ['Thursday','Zumba','ND','8:30'],
     ['Thursday','Sculpt & Tone','KP','17:30'],
     ['Thursday','Zumba','KP','18:30'],
-    ['Friday','Swing Dancing','TS','20:00','23:00'],
+    
     ['Saturday','Zumba','ND','8:00'],
     ['Saturday','Cardio Mix','PD','9:00'],
 		['Saturday','Yoga','KP / JG','10:15'],
