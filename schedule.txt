@@ -10,7 +10,6 @@
 ['Thursday','8:30AM','Zumba','ND'],
 ['Thursday','5:30PM','Sculpt & Tone','KP'],
 ['Thursday','6:30PM','Zumba','KP'],
-['Friday','8:00PM-11:00PM','Swing Dancing','TS'],
 ['Saturday','8:00AM','Zumba','ND'],
 ['Saturday','9:00AM','Cardio Mix','PD'],
 ['Sunday','8:30AM','Step & Sculpt','ND']]
