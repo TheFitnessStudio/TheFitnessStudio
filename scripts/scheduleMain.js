@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
 	var scheduleText = [
-    ['Monday','Cardio Sculpt','ND','8:30'],
+    ['Monday','Cardio Sculpt','ND','9:15'],
     ['Monday','Zumba','ND','17:30'],
     ['Monday','Stretch & Tone','JG','18:30'],
     ['Tuesday','Zumba','ND','8:30'],
