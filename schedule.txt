@@ -1,4 +1,4 @@
-[['Monday','8:30AM','Cardio Sculpt','ND'],
+[['Monday','9:15AM','Cardio Sculpt','ND'],
 ['Monday','5:30PM','Zumba','ND'],
 ['Monday','6:30PM','Stretch & Tone','JG'],
 ['Tuesday','5:30PM','Sculpt & Tone','KP'],
